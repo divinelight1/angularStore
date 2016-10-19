@@ -8,11 +8,24 @@
 	<!-- main content -->
 	<div class="shop" ng-controller="shopController as shop">
 		<div class="jumbotron product" ng-repeat="product in shop.products">
+			<div class="media-left">
+  			<img style="float:right;" ng-src="{{product.images[0].thumbnail}}">
+  			</div>
+  			<div class="media-body">
   			<h2 style="text-transform:capitalize;">{{product.name}}</h2>
   			<p>{{product.description}}</p>
-  			<p><a class="btn btn-success " href="#" role="button">Buy Now</a> {{product.price || currency}} $</p>
+  			<p><a class="btn btn-success "  role="button" ng-click="addToCart()">Add To Cart</a> {{product.price || currency}} $</p>
+  			</div>
+		</div>
+	</div>
+	<div class="cart" ng-controller="cartController as cart">
+		<div class="jumbotron product" ng-repeat="item in cart.cartItems">
+  			<h2 style="text-transform:capitalize;">{{item.name}}</h2>
+  			<p>{{item.description}}</p>
+  			<p><a class="btn btn-success " href="#" role="button" on-click="addToCart()">Add To Cart</a> {{item.price || currency}} $</p>
   		
 		</div>
+
 	</div>
 
 	<!-- end main content -->

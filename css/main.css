@@ -2,6 +2,9 @@
 .shop{
 	width: 50%;
 	border: 2px solid #636363;
+	height: 100%;
+    overflow: scroll;
+    position: absolute;
 }
 .jumbotron{
 	padding: 10px !important;
